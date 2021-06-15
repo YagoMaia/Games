@@ -2,7 +2,7 @@
 
 <h2 align="center" >
     Some simples games for fun and Study Python 🧩 🎮 <br>
-    <img alt="GitHub stars" src="https://img.shields.io/github/stars/YagoMaia/dice-simulator?style=social">
+    <img alt="GitHub stars" src="https://img.shields.io/github/stars/YagoMaia/Games?style=social">
     <img alt="GitHub followers" src="https://img.shields.io/github/followers/YagoMaia?label=Follow%20me%20%3A%29&style=social">
 </h2>
 <p align="center">
