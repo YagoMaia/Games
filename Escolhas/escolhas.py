@@ -1,9 +1,9 @@
 from time import sleep
 from random import randint
-import pygame
+#import pygame
 
 # pygame start
-pygame.init()
+#pygame.init() (desnecessário já que as músicas não estão funcionando)
 #pygame.mixer.music.load('inicio.mp3') (Está com erro)
 #pygame.mixer.music.play()
 
@@ -42,7 +42,7 @@ while resp == 1 and fosf > 0:
         # Música e efeito de fósforo
         #pygame.mixer.music.load('fosforo.mp3') (está com erro)
         #pygame.mixer.music.play()
-        sleep(2)
+        #sleep(2) (desnecessário já que o barulho do fosfóro não tá funcionando)
 
         # Sorteio pra decidir de o fósforo acende ou não
         acender = [0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1]
@@ -93,73 +93,99 @@ while resp == 1 and fosf > 0:
                             sleep(1)
                             print('Mas o vulto não está mais lá...')
                             sleep(1)
+
+                    # Se a opção escolhida for Explorar a Cabana
                     elif resp == 2:
-                        sleep(2)
+                        sleep(1)
                         print('\033[32mVocê explora a cabana...')
-                        sleep(2)
+                        sleep(1)
                         print('Após explorar a cabana você conseguiu uma lanterna')
-                        sleep(2)
+                        sleep(1)
+
+                        # Item adicionado no invetário
                         print('Iten obtido: Lanterna')
                         itens += ['Lanterna']
-                        sleep(2)
+                        sleep(1)
+
+                    # Se a opção escolhida for Sair da Cabana pra explorar
                     elif resp == 3:
-                        sleep(2)
+                        sleep(1)
                         print('\033[32mVocê sai da cabana para explorar...')
+
+                        # Caso vc não tenha pego a laterna na cabana
                         if len(itens) == 0:
-                            sleep(2)
+                            sleep(1)
                             print('Está muito escuro...')
-                            sleep(2)
+                            sleep(1)
                             print('Você escuta uns sons...')
-                            sleep(2)
+                            sleep(1)
                             print('Pela falta de luminisidade você pisa em uma armadilha')
-                            sleep(2)
+                            sleep(1)
                             print('* Sua perna está presa e você está morrendo de dor *')
+
+                            # Laço que continua até vc morrer ou se safar da armadilha
                             while vida != 0:
-                                tirar = [0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0]
-                                sorte = randint(0, 9)
+
+                                # Sortei se vc vai tirar a perna ou não
+                                tirar = [0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1]
+                                sorte = randint(0, (len(tirar) - 1))
+
+                                # Se vc não conseguir tirar a perna
                                 if tirar[sorte] == 0:
+
+                                    # Se vc tiver com vida máxima
                                     if vida == 3:
-                                        sleep(2)
+                                        sleep(1)
                                         print('Você tenta tirar a perna, mas não consegue')
-                                        sleep(2)
+                                        sleep(1)
                                         print('* Você parece tonto *')
                                         vida -= 1
-                                        sorte = randint(0, 9)
+                                        sorte = randint(0, (len(tirar) - 1))
+                                    
+                                    # Se vc tiver com a vida 2
                                     elif vida == 2:
-                                        sleep(2)
+                                        sleep(1)
                                         print('Você tenta NOVAMENTE tirar a perna, mas não consegue')
-                                        sleep(2)
+                                        sleep(1)
                                         print('* Sua visão parece turva... *')
                                         vida -= 1
-                                        sorte = randint(0, 9)
+                                        sorte = randint(0, (len(tirar) - 1))
+
+                                    # Se vc tiver com a vida 1
                                     elif vida == 1:
-                                        sleep(2)
+                                        sleep(1)
                                         print('Você está sem forças, não consegue tirar a perna')
-                                        sleep(2)
+                                        sleep(1)
                                         print('* Você está prestes a desmaiar *')
                                         vida -= 1
-                                        sorte = randint(0, 9)
+                                        sorte = randint(0, (len(tirar) - 1))
+
+                                # Se vc conseguir tirar a perna
                                 else:
-                                    sleep(2)
+                                    sleep(1)
                                     print('Você conseguiu tirar a armadilha do seu pé...')
-                                    sleep(2)
+                                    sleep(1)
                                     print('* Sua perna está sangrando *')
+                                    print('Continua... \033[37m')
                                     break
+
+                        # Caso vc tenha pego a laterna na cabana
                         else:
-                            sleep(2)
+                            sleep(1)
                             print('* Lanterna é acessa *')
-                            sleep(2)
+                            sleep(1)
                             print('Você consegue ver com mais clareza...')
-                            sleep(2)
-                            print('Observa-se arvorés, corujas, uma armadilha no chão...')
-                            sleep(2)
+                            sleep(1)
+                            print('Observa-se árvores, corujas, uma armadilha no chão...')
+                            sleep(1)
                             print('* Você evita a armadilha *')
-                            sleep(2)
+                            sleep(1)
                             print('* Barulho de galho quebrando *')
-                            pygame.mixer.music.load('galho.mp3')
-                            pygame.mixer.music.play()
-                            sleep(2)
-                            print('O que você fará?')
+                            #pygame.mixer.music.load('galho.mp3') (não está funcionando)
+                            #pygame.mixer.music.play()
+                            sleep(1)
+                            print('Continua... \033[37m')
+                            break
 
             # Se o fosfóro não acender
             else:
