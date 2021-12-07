@@ -1,11 +1,11 @@
 from time import sleep
 from random import randint
-#import pygame
+import pygame
 
-# pygame start
-#pygame.init() (desnecessário já que as músicas não estão funcionando)
-#pygame.mixer.music.load('inicio.mp3') (Está com erro)
-#pygame.mixer.music.play()
+
+pygame.init() 
+pygame.mixer.music.load('inicio.mp3')
+pygame.mixer.music.play()
 
 # Variáveis iniciais
 fosf = 5
@@ -40,9 +40,9 @@ while resp == 1 and fosf > 0:
     # Caso escolha a única opção correta
     else:
         # Música e efeito de fósforo
-        #pygame.mixer.music.load('fosforo.mp3') (está com erro)
-        #pygame.mixer.music.play()
-        #sleep(2) (desnecessário já que o barulho do fosfóro não tá funcionando)
+        pygame.mixer.music.load('fosforo.mp3')
+        pygame.mixer.music.play()
+        sleep(2)
 
         # Sorteio pra decidir de o fósforo acende ou não
         acender = [0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1]
@@ -63,8 +63,8 @@ while resp == 1 and fosf > 0:
                 print('Após observar bem, percebe que está em uma cabana com uma vista para um floresta...')
                 sleep(1)
 
-                #pygame.mixer.music.load('inicio.mp3') (está com erro)
-                #pygame.mixer.music.play()
+                pygame.mixer.music.load('inicio.mp3')
+                pygame.mixer.music.play()
 
                 # Segundo While definitivo caso tenha passado da primeira parte
                 while resp != 3:
@@ -181,9 +181,9 @@ while resp == 1 and fosf > 0:
                             print('* Você evita a armadilha *')
                             sleep(1)
                             print('* Barulho de galho quebrando *')
-                            #pygame.mixer.music.load('galho.mp3') (não está funcionando)
-                            #pygame.mixer.music.play()
-                            sleep(1)
+                            pygame.mixer.music.load('galho.mp3')
+                            pygame.mixer.music.play()
+                            sleep(10)
                             print('Continua... \033[37m')
                             break
 
