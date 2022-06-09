@@ -269,7 +269,7 @@ while True:
                 status2 = '\033[1;37mNormal\033[m'
         elif status2 != '\033[1;3mPuto\033[m' or status2 != '\033[1;34mProtegido\033[m':
             if ato1 != 4:
-                if status1 == '\033[1;37mNormal\033[m' or status1 == '\033[1;34mMolhado\033[m':
+                if status1 == '\033[1;37mNormal\033[m' or status1 == '\033[1;34mMolhado\033[m' or status1 == '\033[1;32mEnvenenado\033[m':
                     hp2 -= dano1
                 elif status1 == '\033[1;31mPuto\033[m':
                     hp2 -= dano1 * 2
@@ -481,7 +481,7 @@ while True:
                 status1 = '\033[1;37mNormal\033[m'
         else:
             if ato2 != 4:
-                if status2 == '\033[1;37mNormal\033[m' or status2 == '\033[1;34mMolhado\033[m':
+                if status2 == '\033[1;37mNormal\033[m' or status2 == '\033[1;34mMolhado\033[m' or status2 == '\033[1;32mEnvenenado\033[m':
                     hp1 -= dano2
                 if status1 == '\033[1;32mEnvenenado\033[m':
                     hp1 -= ceil(0.01*hp1)
